@@ -10,6 +10,7 @@
 
 @interface LKSession (RACSupport)
 
+- (RACSignal *)rac_openSessionWithUsername:(NSString *)username password:(NSString *)password;
 - (RACSignal *)rac_state;
 - (RACSignal *)rac_animations;
 

@@ -10,6 +10,19 @@
 
 @implementation LKSession (RACSupport)
 
+- (RACSignal *)rac_openSessionWithUsername:(NSString *)username password:(NSString *)password {
+    return [RACSignal defer:^RACSignal *{
+        RACSubject *subject = [RACSubject subject];
+        
+        [self openSessionWithUsername:username password:password completion:^(NSDictionary *userDict) {
+            [subject sendNext:userDict];
+            [subject sendCompleted];
+        }];
+        
+        return subject;
+    }];
+}
+
 - (RACSignal *)rac_state {
     return [RACSignal defer:^RACSignal *{
         RACSubject *subject = [RACSubject subject];
