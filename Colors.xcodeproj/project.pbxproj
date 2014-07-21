@@ -20,6 +20,11 @@
 		20AAE75F197CAE3600E73391 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20AAE75D197CAE3600E73391 /* InfoPlist.strings */; };
 		20AAE761197CAE3600E73391 /* ColorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE760197CAE3600E73391 /* ColorsTests.m */; };
 		20AAE771197CB27600E73391 /* CLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE770197CB27600E73391 /* CLTabBarController.m */; };
+		20AAE774197CB54F00E73391 /* CLSwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE773197CB54F00E73391 /* CLSwatchViewController.m */; };
+		20AAE777197CB56B00E73391 /* CLPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE776197CB56B00E73391 /* CLPickerViewController.m */; };
+		20AAE77A197CB57800E73391 /* CLAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE779197CB57800E73391 /* CLAnimationViewController.m */; };
+		20AAE780197CB5D700E73391 /* CLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE77F197CB5D700E73391 /* CLAPIClient.m */; };
+		20AAE786197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE785197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m */; };
 		24B386F11417434C96039AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32B90B442F4935AB2ABAF9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,16 @@
 		20AAE760197CAE3600E73391 /* ColorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorsTests.m; sourceTree = "<group>"; };
 		20AAE76F197CB27600E73391 /* CLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTabBarController.h; sourceTree = "<group>"; };
 		20AAE770197CB27600E73391 /* CLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTabBarController.m; sourceTree = "<group>"; };
+		20AAE772197CB54F00E73391 /* CLSwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSwatchViewController.h; sourceTree = "<group>"; };
+		20AAE773197CB54F00E73391 /* CLSwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSwatchViewController.m; sourceTree = "<group>"; };
+		20AAE775197CB56B00E73391 /* CLPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPickerViewController.h; sourceTree = "<group>"; };
+		20AAE776197CB56B00E73391 /* CLPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPickerViewController.m; sourceTree = "<group>"; };
+		20AAE778197CB57800E73391 /* CLAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAnimationViewController.h; sourceTree = "<group>"; };
+		20AAE779197CB57800E73391 /* CLAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAnimationViewController.m; sourceTree = "<group>"; };
+		20AAE77E197CB5D700E73391 /* CLAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAPIClient.h; sourceTree = "<group>"; };
+		20AAE77F197CB5D700E73391 /* CLAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAPIClient.m; sourceTree = "<group>"; };
+		20AAE784197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+RACSupport.h"; sourceTree = "<group>"; };
+		20AAE785197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+RACSupport.m"; sourceTree = "<group>"; };
 		CD32B90B442F4935AB2ABAF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF560F8AB3A843209117AD67 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +133,9 @@
 			children = (
 				20AAE741197CAE3600E73391 /* CLAppDelegate.h */,
 				20AAE742197CAE3600E73391 /* CLAppDelegate.m */,
+				20AAE77D197CB5A500E73391 /* Data Sources */,
 				20AAE76E197CB26100E73391 /* UI */,
+				20AAE77C197CB59300E73391 /* View Models */,
 				20AAE76A197CAFDA00E73391 /* Utilities */,
 				20AAE74D197CAE3600E73391 /* Images.xcassets */,
 				20AAE739197CAE3600E73391 /* Supporting Files */,
@@ -158,6 +175,8 @@
 		20AAE76A197CAFDA00E73391 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				20AAE784197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.h */,
+				20AAE785197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -167,8 +186,30 @@
 			children = (
 				20AAE76F197CB27600E73391 /* CLTabBarController.h */,
 				20AAE770197CB27600E73391 /* CLTabBarController.m */,
+				20AAE772197CB54F00E73391 /* CLSwatchViewController.h */,
+				20AAE773197CB54F00E73391 /* CLSwatchViewController.m */,
+				20AAE775197CB56B00E73391 /* CLPickerViewController.h */,
+				20AAE776197CB56B00E73391 /* CLPickerViewController.m */,
+				20AAE778197CB57800E73391 /* CLAnimationViewController.h */,
+				20AAE779197CB57800E73391 /* CLAnimationViewController.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		20AAE77C197CB59300E73391 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		20AAE77D197CB5A500E73391 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				20AAE77E197CB5D700E73391 /* CLAPIClient.h */,
+				20AAE77F197CB5D700E73391 /* CLAPIClient.m */,
+			);
+			name = "Data Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,9 +344,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AAE786197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m in Sources */,
+				20AAE77A197CB57800E73391 /* CLAnimationViewController.m in Sources */,
 				20AAE743197CAE3600E73391 /* CLAppDelegate.m in Sources */,
 				20AAE73F197CAE3600E73391 /* main.m in Sources */,
+				20AAE777197CB56B00E73391 /* CLPickerViewController.m in Sources */,
+				20AAE780197CB5D700E73391 /* CLAPIClient.m in Sources */,
 				20AAE771197CB27600E73391 /* CLTabBarController.m in Sources */,
+				20AAE774197CB54F00E73391 /* CLSwatchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
