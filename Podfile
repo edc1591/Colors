@@ -1,6 +1,6 @@
 platform :ios, "7.0"
 
-pod 'LightsKit', :git => 'https://github.com/edc1591/LightsKit.git'
+pod 'AFNetworking'
 pod 'PureLayout'
 pod 'ReactiveCocoa'
 pod 'SVProgressHUD'

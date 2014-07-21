@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "LTAppDelegate.h"
+#import "CLAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([LTAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CLAppDelegate class]));
     }
 }

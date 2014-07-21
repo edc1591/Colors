@@ -1,5 +1,5 @@
 //
-//  LTAppDelegate.h
+//  CLTabBarController.h
 //  Colors
 //
 //  Created by Evan Coleman on 7/20/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (nonatomic) UIWindow *window;
+@interface CLTabBarController : UITabBarController
 
 @end

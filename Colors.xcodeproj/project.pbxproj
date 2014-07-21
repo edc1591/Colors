@@ -12,14 +12,14 @@
 		20AAE737197CAE3600E73391 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE736197CAE3600E73391 /* UIKit.framework */; };
 		20AAE73D197CAE3600E73391 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20AAE73B197CAE3600E73391 /* InfoPlist.strings */; };
 		20AAE73F197CAE3600E73391 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE73E197CAE3600E73391 /* main.m */; };
-		20AAE743197CAE3600E73391 /* LTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE742197CAE3600E73391 /* LTAppDelegate.m */; };
+		20AAE743197CAE3600E73391 /* CLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE742197CAE3600E73391 /* CLAppDelegate.m */; };
 		20AAE74E197CAE3600E73391 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20AAE74D197CAE3600E73391 /* Images.xcassets */; };
 		20AAE755197CAE3600E73391 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE754197CAE3600E73391 /* XCTest.framework */; };
 		20AAE756197CAE3600E73391 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE732197CAE3600E73391 /* Foundation.framework */; };
 		20AAE757197CAE3600E73391 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE736197CAE3600E73391 /* UIKit.framework */; };
 		20AAE75F197CAE3600E73391 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20AAE75D197CAE3600E73391 /* InfoPlist.strings */; };
 		20AAE761197CAE3600E73391 /* ColorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE760197CAE3600E73391 /* ColorsTests.m */; };
-		20AAE76D197CB06B00E73391 /* LKSession+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE76C197CB06B00E73391 /* LKSession+RACSupport.m */; };
+		20AAE771197CB27600E73391 /* CLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE770197CB27600E73391 /* CLTabBarController.m */; };
 		24B386F11417434C96039AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32B90B442F4935AB2ABAF9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -42,16 +42,16 @@
 		20AAE73C197CAE3600E73391 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20AAE73E197CAE3600E73391 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		20AAE740197CAE3600E73391 /* Colors-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colors-Prefix.pch"; sourceTree = "<group>"; };
-		20AAE741197CAE3600E73391 /* LTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTAppDelegate.h; sourceTree = "<group>"; };
-		20AAE742197CAE3600E73391 /* LTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTAppDelegate.m; sourceTree = "<group>"; };
+		20AAE741197CAE3600E73391 /* CLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAppDelegate.h; sourceTree = "<group>"; };
+		20AAE742197CAE3600E73391 /* CLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAppDelegate.m; sourceTree = "<group>"; };
 		20AAE74D197CAE3600E73391 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		20AAE753197CAE3600E73391 /* ColorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AAE754197CAE3600E73391 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		20AAE75C197CAE3600E73391 /* ColorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColorsTests-Info.plist"; sourceTree = "<group>"; };
 		20AAE75E197CAE3600E73391 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20AAE760197CAE3600E73391 /* ColorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorsTests.m; sourceTree = "<group>"; };
-		20AAE76B197CB06B00E73391 /* LKSession+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKSession+RACSupport.h"; sourceTree = "<group>"; };
-		20AAE76C197CB06B00E73391 /* LKSession+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKSession+RACSupport.m"; sourceTree = "<group>"; };
+		20AAE76F197CB27600E73391 /* CLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTabBarController.h; sourceTree = "<group>"; };
+		20AAE770197CB27600E73391 /* CLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTabBarController.m; sourceTree = "<group>"; };
 		CD32B90B442F4935AB2ABAF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF560F8AB3A843209117AD67 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,8 +116,9 @@
 		20AAE738197CAE3600E73391 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
-				20AAE741197CAE3600E73391 /* LTAppDelegate.h */,
-				20AAE742197CAE3600E73391 /* LTAppDelegate.m */,
+				20AAE741197CAE3600E73391 /* CLAppDelegate.h */,
+				20AAE742197CAE3600E73391 /* CLAppDelegate.m */,
+				20AAE76E197CB26100E73391 /* UI */,
 				20AAE76A197CAFDA00E73391 /* Utilities */,
 				20AAE74D197CAE3600E73391 /* Images.xcassets */,
 				20AAE739197CAE3600E73391 /* Supporting Files */,
@@ -157,10 +158,17 @@
 		20AAE76A197CAFDA00E73391 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				20AAE76B197CB06B00E73391 /* LKSession+RACSupport.h */,
-				20AAE76C197CB06B00E73391 /* LKSession+RACSupport.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		20AAE76E197CB26100E73391 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				20AAE76F197CB27600E73391 /* CLTabBarController.h */,
+				20AAE770197CB27600E73391 /* CLTabBarController.m */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20AAE743197CAE3600E73391 /* LTAppDelegate.m in Sources */,
-				20AAE76D197CB06B00E73391 /* LKSession+RACSupport.m in Sources */,
+				20AAE743197CAE3600E73391 /* CLAppDelegate.m in Sources */,
 				20AAE73F197CAE3600E73391 /* main.m in Sources */,
+				20AAE771197CB27600E73391 /* CLTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
