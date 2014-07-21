@@ -8,14 +8,14 @@
 
 #import "CLAppDelegate.h"
 
-#import "LTTabBarController.h"
+#import "CLTabBarController.h"
 
 @implementation CLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    LTTabBarController *tabBarController = [[LTTabBarController alloc] init];
+    CLTabBarController *tabBarController = [[CLTabBarController alloc] init];
     self.window.rootViewController = tabBarController;
     
     [self.window makeKeyAndVisible];
