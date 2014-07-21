@@ -23,6 +23,18 @@
     }];
 }
 
+- (RACSignal *)rac_resumeSession {
+    return [RACSignal defer:^RACSignal *{
+        RACSubject *subject = [RACSubject subject];
+        
+        [self resumeSessionWithCompletion:^{
+            [subject sendCompleted];
+        }];
+        
+        return subject;
+    }];
+}
+
 - (RACSignal *)rac_state {
     return [RACSignal defer:^RACSignal *{
         RACSubject *subject = [RACSubject subject];
