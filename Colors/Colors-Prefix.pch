@@ -14,4 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import <EXTScope.h>
+
+    #import "UIColor+Colors.h"
 #endif

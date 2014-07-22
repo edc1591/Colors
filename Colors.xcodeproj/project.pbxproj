@@ -24,7 +24,7 @@
 		20AAE777197CB56B00E73391 /* CLPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE776197CB56B00E73391 /* CLPickerViewController.m */; };
 		20AAE77A197CB57800E73391 /* CLAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE779197CB57800E73391 /* CLAnimationViewController.m */; };
 		20AAE780197CB5D700E73391 /* CLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE77F197CB5D700E73391 /* CLAPIClient.m */; };
-		20AAE786197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE785197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m */; };
+		20AAE7E7197F2E8600E73391 /* UIColor+Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE7E6197F2E8600E73391 /* UIColor+Colors.m */; };
 		24B386F11417434C96039AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32B90B442F4935AB2ABAF9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +65,8 @@
 		20AAE779197CB57800E73391 /* CLAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAnimationViewController.m; sourceTree = "<group>"; };
 		20AAE77E197CB5D700E73391 /* CLAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAPIClient.h; sourceTree = "<group>"; };
 		20AAE77F197CB5D700E73391 /* CLAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAPIClient.m; sourceTree = "<group>"; };
-		20AAE784197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+RACSupport.h"; sourceTree = "<group>"; };
-		20AAE785197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+RACSupport.m"; sourceTree = "<group>"; };
+		20AAE7E5197F2E8600E73391 /* UIColor+Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colors.h"; sourceTree = "<group>"; };
+		20AAE7E6197F2E8600E73391 /* UIColor+Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colors.m"; sourceTree = "<group>"; };
 		CD32B90B442F4935AB2ABAF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF560F8AB3A843209117AD67 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,8 +175,8 @@
 		20AAE76A197CAFDA00E73391 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				20AAE784197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.h */,
-				20AAE785197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m */,
+				20AAE7E5197F2E8600E73391 /* UIColor+Colors.h */,
+				20AAE7E6197F2E8600E73391 /* UIColor+Colors.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -344,12 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20AAE786197CB7DB00E73391 /* AFHTTPSessionManager+RACSupport.m in Sources */,
 				20AAE77A197CB57800E73391 /* CLAnimationViewController.m in Sources */,
 				20AAE743197CAE3600E73391 /* CLAppDelegate.m in Sources */,
 				20AAE73F197CAE3600E73391 /* main.m in Sources */,
 				20AAE777197CB56B00E73391 /* CLPickerViewController.m in Sources */,
 				20AAE780197CB5D700E73391 /* CLAPIClient.m in Sources */,
+				20AAE7E7197F2E8600E73391 /* UIColor+Colors.m in Sources */,
 				20AAE771197CB27600E73391 /* CLTabBarController.m in Sources */,
 				20AAE774197CB54F00E73391 /* CLSwatchViewController.m in Sources */,
 			);

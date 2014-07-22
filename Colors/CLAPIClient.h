@@ -6,10 +6,21 @@
 //  Copyright (c) 2014 Evan Coleman. All rights reserved.
 //
 
-#import "AFHTTPSessionManager.h"
+#import <ObjectiveSpark/OSAPIClient+RACSupport.h>
 
-@interface CLAPIClient : AFHTTPSessionManager
+typedef NS_ENUM(NSUInteger, CLAnimationType) {
+    CLAnimationTypeNone,
+    CLAnimationTypeRainbow,
+    CLAnimationTypeRainbowCycle,
+    CLAnimationTypeColorWipe,
+    CLAnimationTypeBounce,
+};
+
+@interface CLAPIClient : OSAPIClient
 
 - (RACSignal *)animations;
+- (RACSignal *)currentState;
+- (RACSignal *)setColor:(UIColor *)color;
+- (RACSignal *)setAnimation:(CLAnimationType)animation brightness:(CGFloat)brightness speed:(CGFloat)speed;
 
 @end

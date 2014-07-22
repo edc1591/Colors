@@ -8,12 +8,10 @@
 
 #import "CLAPIClient.h"
 
-#import "AFHTTPSessionManager+RACSupport.h"
-
 @implementation CLAPIClient
 
-- (instancetype)init {
-    self = [super initWithBaseURL:[NSURL URLWithString:@"https://api.spark.io/v1/devices/core"]];
+- (instancetype)initWithAccessToken:(NSString *)accessToken deviceID:(NSString *)deviceID {
+    self = [super initWithAccessToken:accessToken deviceID:deviceID];
     if (self != nil) {
         
     }
@@ -21,7 +19,39 @@
 }
 
 - (RACSignal *)animations {
-    return [self rac_get:@"" parameters:nil];
+    return [self rac_readVariable:@"animationNames"];
+}
+
+- (RACSignal *)currentState {
+    return [self rac_readVariable:@"currentState"];
+}
+
+- (RACSignal *)setColor:(UIColor *)color {
+    return [self rac_callFunction:@"setColor" parameter:[color rgbString]];
+}
+
+- (RACSignal *)setAnimation:(CLAnimationType)animation brightness:(CGFloat)brightness speed:(CGFloat)speed {
+    @weakify(self);
+    return [[[[[RACSignal return:@(animation)]
+                map:^NSString *(NSNumber *animation) {
+                    CLAnimationType anim = [animation integerValue];
+                    if (anim == CLAnimationTypeRainbow) {
+                        return @"rainbow";
+                    } else if (anim == CLAnimationTypeRainbowCycle) {
+                        return @"rainbow_cycle";
+                    } else if (anim == CLAnimationTypeColorWipe) {
+                        return @"color_wipe";
+                    } else if (anim == CLAnimationTypeBounce) {
+                        return @"bounce";
+                    }
+                    return nil;
+                }] ignore:nil]
+                map:^NSString *(NSString *animation) {
+                    return [NSString stringWithFormat:@"%@,%f,%f", animation, brightness, speed];
+                }] flattenMap:^RACStream *(NSString *params) {
+                    @strongify(self);
+                    return [self rac_callFunction:@"animate" parameter:params];
+                }];
 }
 
 @end

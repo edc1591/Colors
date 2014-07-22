@@ -20,6 +20,46 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - libextobjc (0.4):
+    - libextobjc/EXTADT
+    - libextobjc/EXTConcreteProtocol
+    - libextobjc/EXTKeyPathCoding
+    - libextobjc/EXTNil
+    - libextobjc/EXTSafeCategory
+    - libextobjc/EXTScope
+    - libextobjc/EXTSelectorChecking
+    - libextobjc/EXTSynthesize
+    - libextobjc/NSInvocation+EXT
+    - libextobjc/NSMethodSignature+EXT
+    - libextobjc/RuntimeExtensions
+    - libextobjc/UmbrellaHeader
+  - libextobjc/EXTADT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4)
+  - libextobjc/UmbrellaHeader (0.4)
+  - ObjectiveSpark/Core (1.0.2):
+    - AFNetworking (~> 2.0)
+  - ObjectiveSpark/ReactiveCocoa (1.0.2):
+    - ObjectiveSpark/Core
+    - ReactiveCocoa
   - PureLayout (1.0.1)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI
@@ -32,12 +72,20 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - libextobjc
+  - ObjectiveSpark/ReactiveCocoa (from `https://raw.githubusercontent.com/edc1591/ObjectiveSpark/master/ObjectiveSpark.podspec`)
   - PureLayout
   - ReactiveCocoa
   - SVProgressHUD
 
+EXTERNAL SOURCES:
+  ObjectiveSpark:
+    :podspec: https://raw.githubusercontent.com/edc1591/ObjectiveSpark/master/ObjectiveSpark.podspec
+
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  libextobjc: ba42e4111f433273a886cd54f0ddaddb7f62f82f
+  ObjectiveSpark: 8e5aac1161eb7b9d3b816c7096811ad38e8922e9
   PureLayout: 972964b21dbcbc5cc36785aed16aba03176f057d
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
