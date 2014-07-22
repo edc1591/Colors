@@ -23,9 +23,9 @@
     }];
 }
 
-- (RACSignal *)rac_put:(NSString *)path parameters:(NSDictionary *)params {
+- (RACSignal *)rac_post:(NSString *)path parameters:(NSDictionary *)params {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [self PUT:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self POST:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
             [subscriber sendNext:RACTuplePack(task, responseObject)];
             [subscriber sendCompleted];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {

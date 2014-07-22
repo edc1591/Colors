@@ -11,6 +11,6 @@
 @interface AFHTTPSessionManager (RACSupport)
 
 - (RACSignal *)rac_get:(NSString *)path parameters:(NSDictionary *)params;
-- (RACSignal *)rac_put:(NSString *)path parameters:(NSDictionary *)params;
+- (RACSignal *)rac_post:(NSString *)path parameters:(NSDictionary *)params;
 
 @end

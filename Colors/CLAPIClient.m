@@ -8,6 +8,8 @@
 
 #import "CLAPIClient.h"
 
+#import "AFHTTPSessionManager+RACSupport.h"
+
 @implementation CLAPIClient
 
 - (instancetype)init {
@@ -19,7 +21,7 @@
 }
 
 - (RACSignal *)animations {
-    return [self get]
+    return [self rac_get:@"" parameters:nil];
 }
 
 @end
