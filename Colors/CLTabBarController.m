@@ -8,6 +8,13 @@
 
 #import "CLTabBarController.h"
 
+#import "CLSwatchViewController.h"
+#import "CLPickerViewController.h"
+#import "CLAnimationViewController.h"
+
+#import "CLAPIClient.h"
+#import "CLSwatchesViewModel.h"
+
 @interface CLTabBarController ()
 
 @end
@@ -17,9 +24,25 @@
 - (instancetype)init {
     self = [super initWithNibName:nil bundle:nil];
     if (self != nil) {
+        CLAPIClient *apiClient = [[CLAPIClient alloc] initWithAccessToken:@"" deviceID:@""];
         
+        CLSwatchesViewModel *swatchesViewModel = [[CLSwatchesViewModel alloc] initWithAPIClient:apiClient];
+        
+        CLSwatchViewController *swatchViewController = [[CLSwatchViewController alloc] initWithViewModel:swatchesViewModel];
+        CLPickerViewController *pickerViewController = [[CLPickerViewController alloc] init];
+        CLAnimationViewController *animationViewController = [[CLAnimationViewController alloc] init];
+        
+        [self setViewControllers:@[ [self navigationControllerWithRoot:swatchViewController],
+                                    [self navigationControllerWithRoot:pickerViewController],
+                                    [self navigationControllerWithRoot:animationViewController] ]];
     }
     return self;
+}
+
+- (UINavigationController *)navigationControllerWithRoot:(UIViewController *)viewController {
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    return navigationController;
 }
 
 @end

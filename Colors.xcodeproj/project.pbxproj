@@ -25,6 +25,9 @@
 		20AAE77A197CB57800E73391 /* CLAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE779197CB57800E73391 /* CLAnimationViewController.m */; };
 		20AAE780197CB5D700E73391 /* CLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE77F197CB5D700E73391 /* CLAPIClient.m */; };
 		20AAE7E7197F2E8600E73391 /* UIColor+Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE7E6197F2E8600E73391 /* UIColor+Colors.m */; };
+		20AAE7EA197F522A00E73391 /* CLSwatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE7E9197F522A00E73391 /* CLSwatchView.m */; };
+		20AAE7EC197F535400E73391 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE7EB197F535400E73391 /* QuartzCore.framework */; };
+		20AAE7EF197F53F200E73391 /* CLSwatchesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE7EE197F53F200E73391 /* CLSwatchesViewModel.m */; };
 		24B386F11417434C96039AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32B90B442F4935AB2ABAF9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,11 @@
 		20AAE77F197CB5D700E73391 /* CLAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAPIClient.m; sourceTree = "<group>"; };
 		20AAE7E5197F2E8600E73391 /* UIColor+Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colors.h"; sourceTree = "<group>"; };
 		20AAE7E6197F2E8600E73391 /* UIColor+Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colors.m"; sourceTree = "<group>"; };
+		20AAE7E8197F522A00E73391 /* CLSwatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSwatchView.h; sourceTree = "<group>"; };
+		20AAE7E9197F522A00E73391 /* CLSwatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSwatchView.m; sourceTree = "<group>"; };
+		20AAE7EB197F535400E73391 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		20AAE7ED197F53F200E73391 /* CLSwatchesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSwatchesViewModel.h; sourceTree = "<group>"; };
+		20AAE7EE197F53F200E73391 /* CLSwatchesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSwatchesViewModel.m; sourceTree = "<group>"; };
 		CD32B90B442F4935AB2ABAF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF560F8AB3A843209117AD67 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AAE7EC197F535400E73391 /* QuartzCore.framework in Frameworks */,
 				20AAE735197CAE3600E73391 /* CoreGraphics.framework in Frameworks */,
 				20AAE737197CAE3600E73391 /* UIKit.framework in Frameworks */,
 				20AAE733197CAE3600E73391 /* Foundation.framework in Frameworks */,
@@ -119,6 +128,7 @@
 		20AAE731197CAE3600E73391 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20AAE7EB197F535400E73391 /* QuartzCore.framework */,
 				20AAE732197CAE3600E73391 /* Foundation.framework */,
 				20AAE734197CAE3600E73391 /* CoreGraphics.framework */,
 				20AAE736197CAE3600E73391 /* UIKit.framework */,
@@ -192,6 +202,8 @@
 				20AAE776197CB56B00E73391 /* CLPickerViewController.m */,
 				20AAE778197CB57800E73391 /* CLAnimationViewController.h */,
 				20AAE779197CB57800E73391 /* CLAnimationViewController.m */,
+				20AAE7E8197F522A00E73391 /* CLSwatchView.h */,
+				20AAE7E9197F522A00E73391 /* CLSwatchView.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -199,6 +211,8 @@
 		20AAE77C197CB59300E73391 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				20AAE7ED197F53F200E73391 /* CLSwatchesViewModel.h */,
+				20AAE7EE197F53F200E73391 /* CLSwatchesViewModel.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -347,8 +361,10 @@
 				20AAE77A197CB57800E73391 /* CLAnimationViewController.m in Sources */,
 				20AAE743197CAE3600E73391 /* CLAppDelegate.m in Sources */,
 				20AAE73F197CAE3600E73391 /* main.m in Sources */,
+				20AAE7EF197F53F200E73391 /* CLSwatchesViewModel.m in Sources */,
 				20AAE777197CB56B00E73391 /* CLPickerViewController.m in Sources */,
 				20AAE780197CB5D700E73391 /* CLAPIClient.m in Sources */,
+				20AAE7EA197F522A00E73391 /* CLSwatchView.m in Sources */,
 				20AAE7E7197F2E8600E73391 /* UIColor+Colors.m in Sources */,
 				20AAE771197CB27600E73391 /* CLTabBarController.m in Sources */,
 				20AAE774197CB54F00E73391 /* CLSwatchViewController.m in Sources */,

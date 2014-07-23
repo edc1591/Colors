@@ -31,7 +31,14 @@ UIColor *UIColorFromRGBA(NSUInteger r, NSUInteger g, NSUInteger b, CGFloat a) {
     CGFloat r, g, b, a;
     [self getRed:&r green:&g blue:&b alpha:&a];
     
-    return [NSString stringWithFormat:@"%f,%f,%f", r, g, b];
+    return [NSString stringWithFormat:@"%0.0f,%0.0f,%0.0f", r*255.0, g*255.0, b*255.0];
+}
+
+- (UIColor *)colorWithBrightness:(CGFloat)brightness {
+    CGFloat r, g, b, a;
+    [self getRed:&r green:&g blue:&b alpha:&a];
+    
+    return UIColorFromRGB((r / brightness) * 255.0, (g / brightness) * 255.0, (b / brightness) * 255.0);
 }
 
 @end

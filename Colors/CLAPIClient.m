@@ -27,6 +27,10 @@
 }
 
 - (RACSignal *)setColor:(UIColor *)color {
+    if (color == nil) {
+        return [RACSignal error:nil];
+    }
+    NSLog(@"Setting Color: %@", [color rgbString]);
     return [self rac_callFunction:@"setColor" parameter:[color rgbString]];
 }
 

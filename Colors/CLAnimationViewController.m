@@ -14,10 +14,11 @@
 
 @implementation CLAnimationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+- (instancetype)init {
+    self = [super initWithNibName:nil bundle:nil];
+    if (self != nil) {
+        self.tabBarItem.image = [UIImage imageNamed:@"aperture"];
+        self.title = @"Animations";
     }
     return self;
 }

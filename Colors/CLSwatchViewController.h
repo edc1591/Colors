@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Evan Coleman. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class CLSwatchesViewModel;
 
 @interface CLSwatchViewController : UIViewController
+
+- (instancetype)initWithViewModel:(CLSwatchesViewModel *)viewModel;
 
 @end
