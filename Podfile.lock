@@ -68,6 +68,7 @@ PODS:
   - ReactiveCocoa/no-arc (2.3.1)
   - ReactiveCocoa/UI (2.3.1):
     - ReactiveCocoa/Core
+  - RSColorPicker (0.9.0)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
@@ -76,11 +77,14 @@ DEPENDENCIES:
   - ObjectiveSpark/ReactiveCocoa (from `https://raw.githubusercontent.com/edc1591/ObjectiveSpark/master/ObjectiveSpark.podspec`)
   - PureLayout
   - ReactiveCocoa
+  - RSColorPicker (from `https://raw.githubusercontent.com/RSully/RSColorPicker/master/RSColorPicker.podspec`)
   - SVProgressHUD
 
 EXTERNAL SOURCES:
   ObjectiveSpark:
     :podspec: https://raw.githubusercontent.com/edc1591/ObjectiveSpark/master/ObjectiveSpark.podspec
+  RSColorPicker:
+    :podspec: https://raw.githubusercontent.com/RSully/RSColorPicker/master/RSColorPicker.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
@@ -88,6 +92,7 @@ SPEC CHECKSUMS:
   ObjectiveSpark: 8e5aac1161eb7b9d3b816c7096811ad38e8922e9
   PureLayout: 972964b21dbcbc5cc36785aed16aba03176f057d
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
+  RSColorPicker: d6537f17bf6b510930757b4fad6561e29a96a5db
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 
 COCOAPODS: 0.33.1

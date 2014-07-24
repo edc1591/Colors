@@ -10,10 +10,10 @@
 
 @class CLAPIClient;
 
-@interface CLSwatchesViewModel : NSObject
+@interface CLColorsViewModel : NSObject
 
 // Input: UIColor
-@property (nonatomic, readonly) RACCommand *selectSwatchCommand;
+@property (nonatomic, readonly) RACCommand *selectColorCommand;
 
 // Input: NSNumber
 @property (nonatomic, readonly) RACCommand *changeBrightnessCommand;

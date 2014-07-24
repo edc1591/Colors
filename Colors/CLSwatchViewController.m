@@ -10,11 +10,11 @@
 
 #import "CLSwatchView.h"
 
-#import "CLSwatchesViewModel.h"
+#import "CLColorsViewModel.h"
 
 @interface CLSwatchViewController ()
 
-@property (nonatomic) CLSwatchesViewModel *viewModel;
+@property (nonatomic) CLColorsViewModel *viewModel;
 
 @property (nonatomic) UISlider *brightnessSlider;
 
@@ -22,7 +22,7 @@
 
 @implementation CLSwatchViewController
 
-- (instancetype)initWithViewModel:(CLSwatchesViewModel *)viewModel {
+- (instancetype)initWithViewModel:(CLColorsViewModel *)viewModel {
     self = [super initWithNibName:nil bundle:nil];
     if (self != nil) {
         self.tabBarItem.image = [UIImage imageNamed:@"layers"];
@@ -45,7 +45,7 @@
     NSInteger sy = 130;
 	
     for (UIColor *color in self.viewModel.colors) {
-        CLSwatchView *swatchView = [[CLSwatchView alloc] initWithColor:color selectCommand:self.viewModel.selectSwatchCommand];
+        CLSwatchView *swatchView = [[CLSwatchView alloc] initWithColor:color selectCommand:self.viewModel.selectColorCommand];
         
         swatchView.frame = CGRectMake(sx + swatchCellWidth * 0.5 - 18.0, sy, 36.0, 36.0);
         sx += swatchCellWidth;

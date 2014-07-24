@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Evan Coleman. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class CLColorsViewModel;
 
 @interface CLPickerViewController : UIViewController
+
+- (instancetype)initWithViewModel:(CLColorsViewModel *)viewModel;
 
 @end

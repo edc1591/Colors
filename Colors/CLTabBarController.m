@@ -13,7 +13,7 @@
 #import "CLAnimationViewController.h"
 
 #import "CLAPIClient.h"
-#import "CLSwatchesViewModel.h"
+#import "CLColorsViewModel.h"
 
 @interface CLTabBarController ()
 
@@ -26,10 +26,10 @@
     if (self != nil) {
         CLAPIClient *apiClient = [[CLAPIClient alloc] initWithAccessToken:@"" deviceID:@""];
         
-        CLSwatchesViewModel *swatchesViewModel = [[CLSwatchesViewModel alloc] initWithAPIClient:apiClient];
+        CLColorsViewModel *swatchesViewModel = [[CLColorsViewModel alloc] initWithAPIClient:apiClient];
         
         CLSwatchViewController *swatchViewController = [[CLSwatchViewController alloc] initWithViewModel:swatchesViewModel];
-        CLPickerViewController *pickerViewController = [[CLPickerViewController alloc] init];
+        CLPickerViewController *pickerViewController = [[CLPickerViewController alloc] initWithViewModel:swatchesViewModel];
         CLAnimationViewController *animationViewController = [[CLAnimationViewController alloc] init];
         
         [self setViewControllers:@[ [self navigationControllerWithRoot:swatchViewController],

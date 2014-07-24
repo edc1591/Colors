@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Evan Coleman. All rights reserved.
 //
 
-#import "CLSwatchesViewModel.h"
+#import "CLColorsViewModel.h"
 
 #import "CLAPIClient.h"
 
-@interface CLSwatchesViewModel ()
+@interface CLColorsViewModel ()
 
-@property (nonatomic) RACCommand *selectSwatchCommand;
+@property (nonatomic) RACCommand *selectColorCommand;
 @property (nonatomic) RACCommand *changeBrightnessCommand;
 @property (nonatomic) CLAPIClient *apiClient;
 @property (nonatomic) NSArray *colors;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation CLSwatchesViewModel
+@implementation CLColorsViewModel
 
 - (instancetype)initWithAPIClient:(CLAPIClient *)apiClient {
     self = [super init];
@@ -39,11 +39,12 @@
         
         @weakify(self);
         
-        _selectSwatchCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIColor *color) {
+        _selectColorCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIColor *color) {
             @strongify(self);
             if (self.selectedColor == nil || [self.selectedColor isEqualToColor:[UIColor blackColor]]) {
                 self.currentBrightness = 1.0;
             }
+            self.currentBrightness = 1.0;
             self.selectedColor = color;
             NSLog(@"Swatch Tapped");
             

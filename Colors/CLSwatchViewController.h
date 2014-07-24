@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Evan Coleman. All rights reserved.
 //
 
-@class CLSwatchesViewModel;
+@class CLColorsViewModel;
 
 @interface CLSwatchViewController : UIViewController
 
-- (instancetype)initWithViewModel:(CLSwatchesViewModel *)viewModel;
+- (instancetype)initWithViewModel:(CLColorsViewModel *)viewModel;
 
 @end
