@@ -24,4 +24,7 @@ extern UIColor *UIColorFromRGBA(NSUInteger r, NSUInteger g, NSUInteger b, CGFloa
 /// Brightness value ranging from 0 to 1
 - (UIColor *)colorWithBrightness:(CGFloat)brightness;
 
+/// Tests using RGB values
+- (BOOL)isEqualToColor:(UIColor *)color;
+
 @end

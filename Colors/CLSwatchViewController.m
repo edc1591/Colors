@@ -71,6 +71,8 @@
             [self.viewModel.changeBrightnessCommand execute:@(slider.value)];
         }];
     
+    RAC(self.brightnessSlider, value) = RACObserve(self, viewModel.currentBrightness);
+    
     [self.brightnessSlider autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:(UIView *)self.bottomLayoutGuide withOffset:-38];
     [self.brightnessSlider autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:20];
     [self.brightnessSlider autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];

@@ -18,6 +18,7 @@
 @property (nonatomic) NSArray *colors;
 
 @property (nonatomic) UIColor *selectedColor;
+@property (nonatomic) CGFloat currentBrightness;
 
 @end
 
@@ -40,6 +41,9 @@
         
         _selectSwatchCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIColor *color) {
             @strongify(self);
+            if (self.selectedColor == nil || [self.selectedColor isEqualToColor:[UIColor blackColor]]) {
+                self.currentBrightness = 1.0;
+            }
             self.selectedColor = color;
             NSLog(@"Swatch Tapped");
             
@@ -48,10 +52,11 @@
         
         _changeBrightnessCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSNumber *brightness) {
             @strongify(self);
-            
-            return [self.apiClient setColor:[self.selectedColor colorWithBrightness:[brightness doubleValue]]];
+            self.currentBrightness = [brightness doubleValue];
+            self.selectedColor = [self.selectedColor colorWithBrightness:[brightness doubleValue]];
+            return [self.apiClient setColor:self.selectedColor];
         }];
-//        
+        
 //        RAC(self, selectedColor) = [[[_selectSwatchCommand executionSignals]
 //                                        switchToLatest] logAll];
     }

@@ -37,8 +37,11 @@ UIColor *UIColorFromRGBA(NSUInteger r, NSUInteger g, NSUInteger b, CGFloat a) {
 - (UIColor *)colorWithBrightness:(CGFloat)brightness {
     CGFloat r, g, b, a;
     [self getRed:&r green:&g blue:&b alpha:&a];
-    
-    return UIColorFromRGB((r / brightness) * 255.0, (g / brightness) * 255.0, (b / brightness) * 255.0);
+    return UIColorFromRGB((isnan(brightness / r) ? 0.0 : (brightness / r)) * 255.0, (isnan(brightness / g) ? 0.0 : (brightness / g)) * 255.0, (isnan(brightness / b) ? 0.0 : (brightness / b)) * 255.0);
+}
+
+- (BOOL)isEqualToColor:(UIColor *)color {
+    return [[self rgbString] isEqualToString:[color rgbString]];
 }
 
 @end

@@ -20,6 +20,9 @@
 
 @property (nonatomic, readonly) NSArray *colors;
 
+@property (nonatomic, readonly) UIColor *selectedColor;
+@property (nonatomic, readonly) CGFloat currentBrightness;
+
 - (instancetype)initWithAPIClient:(CLAPIClient *)apiClient;
 
 @end
