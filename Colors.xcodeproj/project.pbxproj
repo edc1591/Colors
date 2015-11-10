@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203173E81BF1AE260077FC97 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203173E71BF1AE260077FC97 /* Launch Screen.storyboard */; };
 		20AAE733197CAE3600E73391 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE732197CAE3600E73391 /* Foundation.framework */; };
 		20AAE735197CAE3600E73391 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE734197CAE3600E73391 /* CoreGraphics.framework */; };
 		20AAE737197CAE3600E73391 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE736197CAE3600E73391 /* UIKit.framework */; };
@@ -28,6 +29,7 @@
 		20AAE7EA197F522A00E73391 /* CLSwatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE7E9197F522A00E73391 /* CLSwatchView.m */; };
 		20AAE7EC197F535400E73391 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AAE7EB197F535400E73391 /* QuartzCore.framework */; };
 		20AAE7EF197F53F200E73391 /* CLColorsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAE7EE197F53F200E73391 /* CLColorsViewModel.m */; };
+		20FCAA8A1981F8EC00B4C289 /* CLAnimationsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FCAA891981F8EC00B4C289 /* CLAnimationsViewModel.m */; };
 		24B386F11417434C96039AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32B90B442F4935AB2ABAF9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		203173E71BF1AE260077FC97 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		20AAE72F197CAE3600E73391 /* Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AAE732197CAE3600E73391 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20AAE734197CAE3600E73391 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +78,8 @@
 		20AAE7EB197F535400E73391 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		20AAE7ED197F53F200E73391 /* CLColorsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLColorsViewModel.h; sourceTree = "<group>"; };
 		20AAE7EE197F53F200E73391 /* CLColorsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLColorsViewModel.m; sourceTree = "<group>"; };
+		20FCAA881981F8EC00B4C289 /* CLAnimationsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAnimationsViewModel.h; sourceTree = "<group>"; };
+		20FCAA891981F8EC00B4C289 /* CLAnimationsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAnimationsViewModel.m; sourceTree = "<group>"; };
 		CD32B90B442F4935AB2ABAF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF560F8AB3A843209117AD67 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +165,7 @@
 				20AAE73B197CAE3600E73391 /* InfoPlist.strings */,
 				20AAE73E197CAE3600E73391 /* main.m */,
 				20AAE740197CAE3600E73391 /* Colors-Prefix.pch */,
+				203173E71BF1AE260077FC97 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 			children = (
 				20AAE7ED197F53F200E73391 /* CLColorsViewModel.h */,
 				20AAE7EE197F53F200E73391 /* CLColorsViewModel.m */,
+				20FCAA881981F8EC00B4C289 /* CLAnimationsViewModel.h */,
+				20FCAA891981F8EC00B4C289 /* CLAnimationsViewModel.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -276,6 +284,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Evan Coleman";
 				TargetAttributes = {
+					20AAE72E197CAE3600E73391 = {
+						DevelopmentTeam = 52M9C6892K;
+					};
 					20AAE752197CAE3600E73391 = {
 						TestTargetID = 20AAE72E197CAE3600E73391;
 					};
@@ -305,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203173E81BF1AE260077FC97 /* Launch Screen.storyboard in Resources */,
 				20AAE74E197CAE3600E73391 /* Images.xcassets in Resources */,
 				20AAE73D197CAE3600E73391 /* InfoPlist.strings in Resources */,
 			);
@@ -367,6 +379,7 @@
 				20AAE7EA197F522A00E73391 /* CLSwatchView.m in Sources */,
 				20AAE7E7197F2E8600E73391 /* UIColor+Colors.m in Sources */,
 				20AAE771197CB27600E73391 /* CLTabBarController.m in Sources */,
+				20FCAA8A1981F8EC00B4C289 /* CLAnimationsViewModel.m in Sources */,
 				20AAE774197CB54F00E73391 /* CLSwatchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,10 +500,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Evan Coleman (GS2E6P2C2B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colors/Colors-Prefix.pch";
 				INFOPLIST_FILE = "Colors/Colors-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -501,10 +517,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Evan Coleman (GS2E6P2C2B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colors/Colors-Prefix.pch";
 				INFOPLIST_FILE = "Colors/Colors-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

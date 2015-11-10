@@ -19,7 +19,10 @@
 }
 
 - (RACSignal *)animations {
-    return [self rac_readVariable:@"animationNames"];
+    return [[self rac_readVariable:@"animations"]
+                map:^NSArray *(NSDictionary *value) {
+                    return [value[@"result"] componentsSeparatedByString:@","];
+                }];
 }
 
 - (RACSignal *)currentState {
@@ -34,28 +37,10 @@
     return [self rac_callFunction:@"setColor" parameter:[color rgbString]];
 }
 
-- (RACSignal *)setAnimation:(CLAnimationType)animation brightness:(CGFloat)brightness speed:(CGFloat)speed {
-    @weakify(self);
-    return [[[[[RACSignal return:@(animation)]
-                map:^NSString *(NSNumber *animation) {
-                    CLAnimationType anim = [animation integerValue];
-                    if (anim == CLAnimationTypeRainbow) {
-                        return @"rainbow";
-                    } else if (anim == CLAnimationTypeRainbowCycle) {
-                        return @"rainbow_cycle";
-                    } else if (anim == CLAnimationTypeColorWipe) {
-                        return @"color_wipe";
-                    } else if (anim == CLAnimationTypeBounce) {
-                        return @"bounce";
-                    }
-                    return nil;
-                }] ignore:nil]
-                map:^NSString *(NSString *animation) {
-                    return [NSString stringWithFormat:@"%@,%f,%f", animation, brightness, speed];
-                }] flattenMap:^RACStream *(NSString *params) {
-                    @strongify(self);
-                    return [self rac_callFunction:@"animate" parameter:params];
-                }];
+- (RACSignal *)setAnimation:(NSNumber *)animation brightness:(CGFloat)brightness speed:(CGFloat)speed {
+    NSLog(@"Sending animation: %@, brightness: %f, speed: %f", animation, brightness, speed);
+    NSString *params = [NSString stringWithFormat:@"%@,%0.0f,%0.0f", animation, speed, brightness];
+    return [self rac_callFunction:@"animate" parameter:params];
 }
 
 @end

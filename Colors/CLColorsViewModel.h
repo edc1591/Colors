@@ -23,6 +23,8 @@
 @property (nonatomic, readonly) UIColor *selectedColor;
 @property (nonatomic, readonly) CGFloat currentBrightness;
 
+@property (nonatomic) CLAPIClient *apiClient;
+
 - (instancetype)initWithAPIClient:(CLAPIClient *)apiClient;
 
 @end

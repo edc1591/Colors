@@ -44,11 +44,11 @@
     [self.view addSubview:self.colorPicker];
     
     @weakify(self);
-    [[[self rac_signalForSelector:@selector(colorPickerDidChangeSelection:) fromProtocol:@protocol(RSColorPickerViewDelegate)]
+    [[[self rac_signalForSelector:@selector(colorPicker:touchesEnded:withEvent:) fromProtocol:@protocol(RSColorPickerViewDelegate)]
         skip:0]
         subscribeNext:^(RACTuple *tuple) {
             @strongify(self);
-            RACTupleUnpack(RSColorPickerView *colorPickerView) = tuple;
+            RACTupleUnpack(RSColorPickerView *colorPickerView, __unused id touches, __unused id event) = tuple;
             [self.viewModel.selectColorCommand execute:colorPickerView.selectionColor];
         }];
     
@@ -66,16 +66,16 @@
          [self.viewModel.changeBrightnessCommand execute:@(slider.value)];
      }];
     
-    RAC(self.brightnessSlider, value) = RACObserve(self, viewModel.currentBrightness);
+    RAC(self.brightnessSlider, value) = [RACObserve(self, viewModel.currentBrightness) catchTo:[RACSignal return:nil]];
     
-    [self.brightnessSlider autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:(UIView *)self.bottomLayoutGuide withOffset:-38];
+//    [self.brightnessSlider autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:(UIView *)self.bottomLayoutGuide withOffset:-38];
     [self.brightnessSlider autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:20];
     [self.brightnessSlider autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];
 }
 
 #pragma mark - RSColorPickerViewDelegate
 
-- (void)colorPickerDidChangeSelection:(RSColorPickerView *)colorPicker {
+- (void)colorPicker:(RSColorPickerView *)colorPicker touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
 }
 

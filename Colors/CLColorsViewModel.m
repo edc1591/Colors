@@ -14,7 +14,6 @@
 
 @property (nonatomic) RACCommand *selectColorCommand;
 @property (nonatomic) RACCommand *changeBrightnessCommand;
-@property (nonatomic) CLAPIClient *apiClient;
 @property (nonatomic) NSArray *colors;
 
 @property (nonatomic) UIColor *selectedColor;

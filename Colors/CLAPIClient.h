@@ -8,19 +8,11 @@
 
 #import <ObjectiveSpark/OSAPIClient+RACSupport.h>
 
-typedef NS_ENUM(NSUInteger, CLAnimationType) {
-    CLAnimationTypeNone,
-    CLAnimationTypeRainbow,
-    CLAnimationTypeRainbowCycle,
-    CLAnimationTypeColorWipe,
-    CLAnimationTypeBounce,
-};
-
 @interface CLAPIClient : OSAPIClient
 
 - (RACSignal *)animations;
 - (RACSignal *)currentState;
 - (RACSignal *)setColor:(UIColor *)color;
-- (RACSignal *)setAnimation:(CLAnimationType)animation brightness:(CGFloat)brightness speed:(CGFloat)speed;
+- (RACSignal *)setAnimation:(NSNumber *)animation brightness:(CGFloat)brightness speed:(CGFloat)speed;
 
 @end
