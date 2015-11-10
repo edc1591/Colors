@@ -22,7 +22,7 @@ Docs/API
 *.xcodeproj/xcuserdata/
 *.xcodeproj/xcshareddata/
 *.xcworkspace/xcshareddata/
-Pods/
+#Pods/
 # UISpecRunner cached build path
 .uispec.app
 Specs/Runner/UISpec
