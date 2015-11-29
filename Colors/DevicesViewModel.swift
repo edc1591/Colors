@@ -12,12 +12,31 @@ import Spark_SDK
 class DevicesViewModel: ViewModel {
     let viewModels: MutableProperty<Array<DeviceViewModel>>
     let loadDevicesAction: Action<Void, Array<DeviceViewModel>, NSError>
-    let selectDeviceAction: Action<DeviceViewModel, DeviceViewModel?, NoError>
-    let selectedDeviceViewModel: MutableProperty<DeviceViewModel?>
+    private(set) lazy var selectDeviceAction: Action<DeviceViewModel, Array<DeviceViewModel>, NoError> = {
+        return Action<DeviceViewModel, Array<DeviceViewModel>, NoError> { [unowned self] viewModel in
+            let isSelect = !self.selectedDeviceViewModels.value.contains({ (d) -> Bool in
+                return d === viewModel
+            })
+            var selectedViewModels =
+                self.selectedDeviceViewModels.value
+                    .filter({ (deviceViewModel) -> Bool in
+                        return deviceViewModel.identifier != viewModel.identifier
+                    })
+            if isSelect {
+                selectedViewModels.append(viewModel)
+            }
+            
+            return UserPreferencesClient.set(selectedViewModels.map({ d in d.identifier }), key: UserPreferencesClient.SelectedDeviceIdentifiersKey)
+                .map({ _ -> Array<DeviceViewModel> in
+                    return selectedViewModels
+                })
+        }
+    }()
+    let selectedDeviceViewModels: MutableProperty<Array<DeviceViewModel>>
     
     init() {
         self.viewModels = MutableProperty<Array<DeviceViewModel>>([])
-        self.selectedDeviceViewModel = MutableProperty<DeviceViewModel?>(nil)
+        self.selectedDeviceViewModels = MutableProperty<Array<DeviceViewModel>>([])
         
         self.loadDevicesAction = Action<Void, Array<DeviceViewModel>, NSError> { _ in
             return APIClient.devices()
@@ -28,24 +47,18 @@ class DevicesViewModel: ViewModel {
                 })
         }
         
-        self.selectDeviceAction = Action<DeviceViewModel, DeviceViewModel?, NoError> { viewModel in
-            return UserPreferencesClient.set(viewModel.identifier, key: UserPreferencesClient.SelectedDeviceIdentifierKey)
-                .map({ _ -> DeviceViewModel? in
-                    return viewModel
-                })
-        }
-        self.selectedDeviceViewModel <~ self.selectDeviceAction.values
+        self.selectedDeviceViewModels <~ self.selectDeviceAction.values
         
         self.viewModels <~ self.loadDevicesAction.values
         
         self.loadDevicesAction.apply()
-            .combineLatestWith(UserPreferencesClient.get(UserPreferencesClient.SelectedDeviceIdentifierKey).promoteErrors(ActionError<NSError>))
-            .startWithNext { [unowned self] (deviceViewModels, selectedIdentifier) in
-                if let ID = selectedIdentifier as? String {
-                    self.selectedDeviceViewModel.value =
+            .combineLatestWith(UserPreferencesClient.get(UserPreferencesClient.SelectedDeviceIdentifiersKey).promoteErrors(ActionError<NSError>))
+            .startWithNext { [unowned self] (deviceViewModels, selectedIdentifiers) in
+                if let IDs = selectedIdentifiers as? [String] {
+                    self.selectedDeviceViewModels.value =
                         deviceViewModels.filter({ viewModel -> Bool in
-                            return viewModel.identifier == ID
-                        }).first
+                            return IDs.contains(viewModel.identifier)
+                        })
                 } else if let deviceViewModel = deviceViewModels.first {
                     self.selectDeviceAction.apply(deviceViewModel).start()
                 }

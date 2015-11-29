@@ -19,13 +19,9 @@ class TabBarViewModel: ViewModel {
         self.viewModels = MutableProperty<Array<ViewModel>>([])
         
         self.viewModels <~
-            devicesViewModel.selectedDeviceViewModel.producer
-                .map({ (viewModel) -> Array<ViewModel> in
-                    if let selectedViewModel = viewModel {
-                        return [SwatchViewModel(deviceViewModel: selectedViewModel)]
-                    } else {
-                        return []
-                    }
+            devicesViewModel.selectedDeviceViewModels.producer
+                .map({ (viewModels) -> [ViewModel] in
+                    return [SwatchViewModel(deviceViewModels: viewModels)]
                 })
         
         self.presentDevicesAction = Action<AnyObject, DevicesViewModel, NoError> { _ in
@@ -33,14 +29,15 @@ class TabBarViewModel: ViewModel {
         }
         
         self.powerOffAction = Action<AnyObject, Int, NoError> { _ in
-            if let deviceViewModel = devicesViewModel.selectedDeviceViewModel.value {
-                return deviceViewModel.setColorAction.apply(UIColor.blackColor())
-                    .flatMapError({ _ -> SignalProducer<Int, NoError> in
-                        return SignalProducer.empty
-                    })
-            } else {
-                return SignalProducer.empty
-            }
+            let signals = devicesViewModel.selectedDeviceViewModels.value
+                .map({ (deviceViewModel) -> SignalProducer<Int, NoError> in
+                    return deviceViewModel.setColorAction.apply(UIColor.blackColor())
+                        .flatMapError({ _ -> SignalProducer<Int, NoError> in
+                            return SignalProducer.empty
+                        })
+                })
+            return SignalProducer<SignalProducer<Int, NoError>, NoError>(values: signals)
+                .flatten(FlattenStrategy.Merge)
         }
     }
 }

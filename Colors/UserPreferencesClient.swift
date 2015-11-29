@@ -10,7 +10,7 @@ import ReactiveCocoa
 
 struct UserPreferencesClient {
     static let LoggedInUsernameKey = "LoggedInUsernameKey"
-    static let SelectedDeviceIdentifierKey = "SelectedDeviceIdentifierKey"
+    static let SelectedDeviceIdentifiersKey = "SelectedDeviceIdentifiersKey"
     
     static func set(obj: AnyObject?, key: String) -> SignalProducer<AnyObject?, NoError> {
         return SignalProducer<AnyObject?, NoError> { s, _ in

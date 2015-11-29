@@ -11,10 +11,10 @@ import ReactiveCocoa
 
 class SwatchViewModel: ViewModel {
     let colors: Array<UIColor>
-    let deviceViewModel: DeviceViewModel
+    let deviceViewModels: [DeviceViewModel]
     
-    init(deviceViewModel: DeviceViewModel) {
-        self.deviceViewModel = deviceViewModel
+    init(deviceViewModels: [DeviceViewModel]) {
+        self.deviceViewModels = deviceViewModels
         
         var colors: Array<UIColor> = []
         for var angle = 0.0; angle < 360; angle += 10 {

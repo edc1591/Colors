@@ -23,6 +23,9 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.view.backgroundColor = UIColor.whiteColor()
         self.delegate = self
         
+        self.navigationBar = UINavigationBar()
+        self.view.addSubview(self.navigationBar)
+        
         self.viewModel.viewModels.producer
             .map({ viewModels -> Array<UIViewController> in
                 return viewModels.map({ (viewModel) -> UIViewController in
@@ -44,9 +47,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
                 let navigationController = UINavigationController(rootViewController: viewController)
                 self.presentViewController(navigationController, animated: true, completion: nil)
             }
-        
-        self.navigationBar = UINavigationBar()
-        self.view.addSubview(self.navigationBar)
         
         let devicesAction = self.viewModel.presentDevicesAction.unsafeCocoaAction
         let devicesButton = UIBarButtonItem(image: UIImage(named: "navigation_settings_normal"), style: UIBarButtonItemStyle.Plain, target: devicesAction, action: CocoaAction.selector)

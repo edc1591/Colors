@@ -36,7 +36,10 @@ class SwatchViewController: ViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let viewModel = self.viewModel as! SwatchViewModel
-        viewModel.deviceViewModel.setColorAction.apply(viewModel.colors[indexPath.row]).start()
+        let color = viewModel.colors[indexPath.row]
+        for deviceViewModel in viewModel.deviceViewModels {
+            deviceViewModel.setColorAction.apply(color).start()
+        }
     }
     
     // MARK: UICollectionViewDataSource

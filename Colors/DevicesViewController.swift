@@ -57,7 +57,9 @@ class DevicesViewController: ViewController, UITableViewDelegate, UITableViewDat
         let deviceViewModel = viewModel.viewModels.value[indexPath.row]
         
         cell.textLabel?.text = deviceViewModel.name
-        cell.textLabel?.textColor = (viewModel.selectedDeviceViewModel.value === deviceViewModel) ? UIColor.redColor() : UIColor.blackColor()
+        cell.accessoryType = viewModel.selectedDeviceViewModels.value.contains({ (d) -> Bool in
+            return deviceViewModel === d
+        }) ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
         
         return cell
     }
